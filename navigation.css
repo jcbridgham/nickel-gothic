@@ -8,8 +8,8 @@
   
   header {
     /* where to set the color of the nav bar */
-      background: lightgray;
-      text-align: center;
+      background: #09354D;
+      text-align: left;
       top:0px;
       position: fixed;
       z-index: 999;
@@ -26,7 +26,7 @@
       padding-top:10px;
       top: 100%;
       left: 0;
-      background: gray;
+      background: #0D82B0;
       width: 100%;
       transform: scale(1,0);
       transform-origin: top;
@@ -45,16 +45,16 @@
   }
   
   nav a {
-      color: black;
+      color: #E8E9E9;
       text-decoration: none;
-      font-size: 1.2rem;
+      font-size: 25px;
       text-transform: uppercase;
       opacity: 0;
       transition: opacity 100ms ease-in-out;
   }
   /* where to change the font color of the nav bar pop-up */
   nav a:hover {
-      color: orange;
+      color: #A71E22;
   }
   
   .nav-checkbox:checked ~ nav {
@@ -81,9 +81,9 @@
   
           display: block;
           /* color of the hamburger menu */
-          background: black;
+          background: #E8E9E9;
           /* how far the hamburger menu is from the top */
-          margin-top:7px;
+          margin-top:13px;
           height: 3px;
           width: 2em;
           position: relative;

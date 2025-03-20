@@ -7,13 +7,14 @@
         }
     
     body{
-    background-color: lightsteelblue;
+    background-color: #E8E9E9;
     font-family: 'Nickel Gothic', sans-serif;
+    padding-top: 4rem; /* Adjust this value to match the height of the nav bar */
 }
 /* how the page wrapper will appear on mobile */
 .page-wrapper{
     width: min(100% - 3rem, 80ch);
-    margin-inline: auto;
+    margin-inline: 5vw auto; /* Adjust the value as needed */
 }
 /* how the page wrapper appears on desktop */
 
@@ -32,6 +33,10 @@ grid-template-areas:
 grid-area: h;
 }
 
+.history h2 {
+    font-size: em; /* Adjust the value as needed */
+}
+
 .variations{
 grid-area: v;
 }
@@ -39,10 +44,18 @@ grid-area: v;
 .alphabet {
 grid-area: a;
 }
+
+.alphabet h1 {
+    white-space: nowrap;
+}
+
+.hero {
+    margin-top: 2rem; /* Adjust spacing for desktop mode */
+}
 }
 /* CSS for the footer */
 footer{
-    background-color: gray;
+    background-color: #09354D;
 }
 
 /* variable font animation */
@@ -50,16 +63,73 @@ h3{
     font-weight:20; 
     text-align: center;
     font-size: 5em;
-    animation: weightChange 7s infinite;
+    animation: weightChange 10s infinite; /* Set animation duration to 10 seconds */
+}
+
+.hero h3:nth-of-type(2) {
+    animation: weightChange 10s infinite; /* Same animation as NICKEL */
+}
+
+.hero h3:nth-of-type(1) {
+    color: #0D82B0; /* Same color as the dropdown menu */
+}
+
+.hero h3:nth-of-type(2) {
+    color: #A71E22; /* Same color as "HISTORY" hover */
+}
+
+/* Remove reverseSlant animation */
+
+.hero {
+    margin-top: 0; /* Remove extra margin since padding-top handles spacing */
+    text-align: center;
+    padding-top: clamp(0.75em, 2vw, 1.5em); /* Responsive vertical spacing */
+}
+
+.hero h3 {
+    font-size: clamp(5rem, 15vw, 20rem); /* Increase the range for larger text */
+    margin: 0; /* Remove vertical margin */
+    line-height: 0.75; /* Maintain consistent spacing */
+    text-align: center; /* Center the text */
+    word-break: break-word; /* Ensure proper wrapping if needed */
 }
 
 @keyframes weightChange {
-    0%, 100%{
-        font-variation-settings: "wdth" 25, "slnt" -15;
+    0%, 12.5% {
+        font-variation-settings: "wdth" 150, "slnt" 0; /* Widest with no slant */
     }
-    50%{font-variation-settings: "wdth" 150, "slnt" 15;
+    50% {
+        font-variation-settings: "wdth" 25, "slnt" -15; /* Thinnest with slant */
+    }
+    100% {
+        font-variation-settings: "wdth" 150, "slnt" 0; /* Return to widest with no slant */
+    }
+}
+/* animations for the variation section */
+.width{
+    animation:weightVariations 5s infinite;
+}
+@keyframes weightVariations {
+    0%, 100%{
+        font-variation-settings: "wdth" 25;
+    }
+    50%{font-variation-settings: "wdth" 150;
     }
     
+}
+.slant{
+    animation:slantVariations 5s infinite;
+}
+@keyframes slantVariations {
+    0%, 100%{
+        font-variation-settings: "slnt" 15;
+    }
+    50%{font-variation-settings: "slnt" -15;
+    }
+    
+}
+h5{
+    font-size:40px;
 }
 /* variable font that changes on hover */
 .variable-font{
@@ -93,10 +163,10 @@ a {display: inline-block;
     outline: none;
     cursor: pointer;
     padding: 20px 20px;
-    margin:60px;
+    margin:0px;
     border-radius: 10px;
-    font-size: 16px;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 10px;
+    font-family: 'Nickel Gothic', sans-serif;
 }
  /* Hover effect with animation */
  .hover-effect {
@@ -122,3 +192,14 @@ a {display: inline-block;
     visibility: visible;
     transform: scaleX(1);
   }
+
+.page-nav ul li a {
+    font-size: clamp(0.8rem, 2vw, 1.5rem); /* Scales between 0.8rem and 1.5rem */
+    transition: font-size 0.3s ease; /* Smooth transition for scaling */
+}
+
+@media only screen and (max-width: 400px) {
+    .page-nav ul li a {
+        font-size: 0.7rem; /* Ensure readability on very small screens */
+    }
+}
