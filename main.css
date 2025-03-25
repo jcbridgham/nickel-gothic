@@ -13,8 +13,14 @@
 }
 /* how the page wrapper will appear on mobile */
 .page-wrapper{
+    text-align: center; /* Center all text inside the page wrapper */
     width: min(100% - 3rem, 80ch);
-    margin-inline: 5vw auto; /* Adjust the value as needed */
+    margin-inline: auto; /* Center horizontally */
+    margin-top: 2rem; /* Add spacing from the hero section */
+}
+
+.page-wrapper section {
+    margin-bottom: 2rem; /* Add spacing between sections to prevent overlap */
 }
 /* how the page wrapper appears on desktop */
 
@@ -87,11 +93,11 @@ h3{
 }
 
 .hero h3 {
-    font-size: clamp(5rem, 15vw, 20rem); /* Increase the range for larger text */
-    margin: 0; /* Remove vertical margin */
-    line-height: 0.75; /* Maintain consistent spacing */
-    text-align: center; /* Center the text */
-    word-break: break-word; /* Ensure proper wrapping if needed */
+    font-size: clamp(5rem, 15vw, 20rem); /* Original font size */
+    margin: 0; /* Original vertical margin */
+    line-height: 0.75; /* Original line height */
+    text-align: center; /* Original text alignment */
+    word-break: break-word; /* Original wrapping behavior */
 }
 
 @keyframes weightChange {
@@ -202,4 +208,14 @@ a {display: inline-block;
     .page-nav ul li a {
         font-size: 0.7rem; /* Ensure readability on very small screens */
     }
+}
+
+.history {
+    background-color: #09354D; /* Same color as the nav bar */
+    color: #E8E9E9; /* Ensure text is readable */
+    padding: 1.5rem; /* Add padding inside the box */
+    border-radius: 0.5rem; /* Optional: Add rounded corners */
+    width: 100%; /* Stretch the box to full width */
+    margin-left: 0; /* Remove any left margin */
+    margin-right: 0; /* Remove any right margin */
 }
