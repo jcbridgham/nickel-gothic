@@ -215,7 +215,4 @@ a {display: inline-block;
     color: #E8E9E9; /* Ensure text is readable */
     padding: 1.5rem; /* Add padding inside the box */
     border-radius: 0.5rem; /* Optional: Add rounded corners */
-    width: 100%; /* Stretch the box to full width */
-    margin-left: 0; /* Remove any left margin */
-    margin-right: 0; /* Remove any right margin */
 }
