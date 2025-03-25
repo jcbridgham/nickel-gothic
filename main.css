@@ -40,11 +40,56 @@ grid-area: h;
 }
 
 .history h2 {
-    font-size: em; /* Adjust the value as needed */
+    font-size: 2rem; /* Adjust the size to match the paragraph width */
+    color: #0D82B0; /* Set the color to the same light blue as "NICKEL" */
+    text-align: left; /* Align the heading to the left */
+    margin-bottom: 1rem; /* Add spacing below the heading */
 }
 
-.variations{
-grid-area: v;
+.variations {
+    grid-area: v;
+    background-color: #0B162C; /* Set the background color */
+    color: #E8E9E9; /* Ensure text is readable */
+    position: relative; /* Keep the text layout intact */
+    text-align: center; /* Center the text inside the box */
+    left: 50%; /* Align the left side of the box with the center of the page */
+    transform: translateX(-50%); /* Adjust for centering */
+    width: 30vw; /* Further reduce the width of the box */
+    max-width: 500px; /* Set a maximum width for larger screens */
+    padding: 0.75rem; /* Reduce padding for a more compact design */
+    border-radius: 0; /* Remove rounded edges */
+}
+
+.variations::before {
+    content: ''; /* Create a separate box */
+    position: absolute;
+    top: 0;
+    left: 50%; /* Start at the center of the page */
+    width: 50vw; /* Extend to the right edge */
+    height: 100%; /* Match the height of the .variations section */
+    background-color: #0B162C; /* Set the background color */
+    z-index: -1; /* Place the box behind the text */
+    border-radius: 0; /* Remove rounded corners */
+}
+
+.variations h2 {
+    font-size: 2rem; /* Match the size of "HISTORY OF THE FONT" */
+    color: #E8E9E9; /* Keep the text color consistent */
+    text-align: right; /* Align the heading to the right */
+    margin-top: 1rem; /* Add spacing above the heading */
+    margin-bottom: 1rem; /* Add spacing below the heading */
+}
+
+.variations p {
+    font-family: Arial, sans-serif; /* Use a basic sans-serif font */
+    font-size: 1.5rem; /* Match the font size of the history paragraph */
+    text-align: left; /* Align the text to the left */
+    line-height: 1.4; /* Match the line spacing of the history paragraph */
+}
+
+.variations h5 {
+    text-align: right; /* Align the subheadings to the right */
+    margin-right: 0; /* Ensure no extra margin on the right */
 }
 
 .alphabet {
@@ -61,7 +106,7 @@ grid-area: a;
 }
 /* CSS for the footer */
 footer{
-    background-color: #09354D;
+    background-color: #A71E22; /* Match the red color used for text */
 }
 
 /* variable font animation */
@@ -214,5 +259,119 @@ a {display: inline-block;
     background-color: #09354D; /* Same color as the nav bar */
     color: #E8E9E9; /* Ensure text is readable */
     padding: 1.5rem; /* Add padding inside the box */
-    border-radius: 0.5rem; /* Optional: Add rounded corners */
+    position: relative; /* Keep the text layout intact */
+    max-width: 600px; /* Lock the width of the history section */
+    margin-inline: auto; /* Center the section horizontally */
+    margin-bottom: 0; /* Remove bottom margin to ensure it touches the next section */
+}
+
+.history::before {
+    content: ''; /* Create a separate box */
+    position: absolute;
+    top: 0;
+    left: -100vw; /* Stretch fully to the left edge of the page */
+    width: 150vw; /* Extend to cover the left stretch and end at the center */
+    height: 100%; /* Match the height of the .history section */
+    background-color: #09354D; /* Same color as the nav bar */
+    z-index: -1; /* Place the box behind the text */
+    border-radius: 0; /* Remove rounded corners */
+}
+
+.history h2 {
+    font-size: 2rem; /* Lock the font size */
+    color: #0D82B0; /* Keep the blue color */
+    text-align: left; /* Align the heading to the left */
+    margin-bottom: 1rem; /* Add spacing below the heading */
+    max-width: 100%; /* Ensure the title doesn't exceed the section width */
+}
+
+.history p {
+    font-family: Arial, sans-serif; /* Use a basic sans-serif font */
+    font-size: 1.5rem; /* Lock the font size */
+    text-align: left; /* Align the text to the left */
+    line-height: 1.4; /* Maintain consistent line spacing */
+    max-width: 100%; /* Ensure the paragraph doesn't exceed the section width */
+}
+
+.history, .variations {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    padding-left: 2rem; /* Add consistent left padding */
+}
+
+/* Ensure headings are aligned horizontally */
+.history h2, .variations h2 {
+    margin-left: 0; /* Remove any extra left margin */
+}
+
+@media only screen and (max-width: 800px) {
+    body, .page-wrapper, .page-wrapper section, .history, .variations, .alphabet, .hero, h3, h5, .variable-font, a, .hover-effect, .page-nav ul li a {
+        font-variation-settings: "slnt" 0; /* Ensure no slant in mobile mode */
+        font-style: normal; /* Explicitly set normal font style */
+    }
+
+    .history h2 {
+        color: #0D82B0; /* Keep the blue color for "HISTORY OF THE FONT" */
+    }
+
+    .variations p {
+        font-family: Arial, sans-serif; /* Ensure the font remains consistent */
+    }
+
+    .history {
+        position: relative; /* Ensure proper layout */
+        padding: 1.5rem; /* Maintain padding for text */
+        margin-bottom: 0; /* Remove bottom margin to ensure it touches the next section */
+    }
+
+    .history::before {
+        content: ''; /* Create a separate box */
+        position: absolute; /* Use absolute positioning */
+        top: 0;
+        left: -100vw; /* Stretch infinitely to the left */
+        right: -100vw; /* Stretch infinitely to the right */
+        width: auto; /* Allow horizontal stretching */
+        height: calc(100% + 3rem); /* Extend height further to overlap the top of the .variations box */
+        background-color: #09354D; /* Same color as the nav bar */
+        z-index: -1; /* Place the box behind the text */
+        border-radius: 0; /* Remove rounded corners */
+    }
+
+    .variations {
+        grid-area: auto; /* Remove grid placement */
+        margin-top: 0; /* Remove spacing between history and variations */
+        padding: 1.5rem; /* Maintain padding for text */
+        position: relative; /* Ensure proper layout */
+        color: #E8E9E9; /* Ensure text remains white */
+    }
+
+    .variations::before {
+        content: ''; /* Create a separate box */
+        position: absolute; /* Use absolute positioning */
+        top: 0;
+        left: -100vw; /* Stretch infinitely to the left */
+        right: -100vw; /* Stretch infinitely to the right */
+        width: auto; /* Allow horizontal stretching */
+        height: 100%; /* Match the height of the .variations section */
+        background-color: #0B162C; /* Set the background color */
+        z-index: -1; /* Place the box behind the text */
+        border-radius: 0; /* Remove rounded corners */
+    }
+
+    .page-wrapper {
+        display: block; /* Stack sections vertically */
+    }
+
+    .history, .variations {
+        display: flex; /* Use flexbox for alignment */
+        flex-direction: column; /* Stack content vertically */
+        justify-content: center; /* Center content vertically */
+        padding-left: 1rem; /* Add consistent left padding for mobile */
+    }
+
+    /* Ensure headings are aligned horizontally in mobile mode */
+    .history h2, .variations h2 {
+        margin-left: 0; /* Remove any extra left margin */
+    }
 }
