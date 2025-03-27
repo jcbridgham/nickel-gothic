@@ -1,232 +1,283 @@
 @font-face {
     src: url("fonts/NickelGothicVariable[slnt\,wdth]-Edu.woff2") format("woff2"),
          url('fonts/NickelGothicVariable[slnt\,wdth]-Edu.woff') format("woff");
-        font-family: 'Nickel Gothic';
-        font-style: normal;
-        font-weight: normal;
-        }
-    
-    body{
+    font-family: 'Nickel Gothic';
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
     background-color: #E8E9E9;
     font-family: 'Nickel Gothic', sans-serif;
-    padding-top: 4rem; /* Adjust this value to match the height of the nav bar */
+    padding-top: 4rem;
 }
-/* how the page wrapper will appear on mobile */
-.page-wrapper{
-    text-align: center; /* Center all text inside the page wrapper */
+
+.page-wrapper {
+    text-align: center;
     width: min(100% - 3rem, 80ch);
-    margin-inline: auto; /* Center horizontally */
-    margin-top: 2rem; /* Add spacing from the hero section */
+    margin-inline: auto;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    grid-gap: 25px;
 }
 
 .page-wrapper section {
-    margin-bottom: 2rem; /* Add spacing between sections to prevent overlap */
-}
-/* how the page wrapper appears on desktop */
-
-@media only screen and (min-width:800px){
-.page-wrapper{
-display: grid;
-grid-gap: 25px;
-grid-template-columns: 1fr 1fr;
-grid-template-rows: auto;
-grid-template-areas: 
-    "h v"
-    "a a";
+    margin-bottom: 2rem;
 }
 
-.history {
-grid-area: h;
+@media only screen and (min-width: 800px) {
+    .page-wrapper {
+        display: grid;
+        grid-gap: 25px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "h v"
+            "a a";
+    }
+
+    .history {
+        grid-area: h;
+    }
+
+    .history h2 {
+        font-size: 2rem;
+        color: #0D82B0;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    .variations {
+        grid-area: v;
+        background-color: #0B162C;
+        color: #E8E9E9;
+        position: relative;
+        text-align: left;
+        width: 30vw;
+        max-width: 500px;
+        padding: 0.75rem;
+        border-radius: 0;
+        padding-left: 2rem;
+        margin-left: 0;
+        transform: none;
+        left: 0;
+        align-items: flex-start;
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0.5rem;
+    }
+
+    .variations::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50vw;
+        height: 100%;
+        background-color: #0B162C;
+        z-index: -1;
+        border-radius: 0;
+    }
+
+    .variations h2 {
+        font-size: 2rem;
+        color: #E8E9E9;
+        text-align: left;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .variations p {
+        font-family: Arial, sans-serif;
+        font-size: 1.5rem;
+        text-align: left;
+        line-height: 1.4;
+    }
+
+    .variations h5 {
+        text-align: left;
+        margin-right: 0;
+    }
+
+    .variations h5.width {
+        font-size: 6rem; /* Increased from 4rem */
+        margin-top: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #0D82B0;
+    }
+
+    .variations h5.slant {
+        font-size: 6rem; /* Increased from 4rem */
+        margin-top: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #A71E22;
+    }
+
+    .alphabet {
+        grid-area: a;
+    }
+
+    .alphabet h1 {
+        white-space: nowrap;
+    }
+
+    .hero {
+        margin-top: 2rem;
+    }
 }
 
-.history h2 {
-    font-size: 2rem; /* Adjust the size to match the paragraph width */
-    color: #0D82B0; /* Set the color to the same light blue as "NICKEL" */
-    text-align: left; /* Align the heading to the left */
-    margin-bottom: 1rem; /* Add spacing below the heading */
+footer {
+    background-color: #0B162C;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E8E9E9;
 }
 
-.variations {
-    grid-area: v;
-    background-color: #0B162C; /* Set the background color */
-    color: #E8E9E9; /* Ensure text is readable */
-    position: relative; /* Keep the text layout intact */
-    text-align: center; /* Center the text inside the box */
-    left: 50%; /* Align the left side of the box with the center of the page */
-    transform: translateX(-50%); /* Adjust for centering */
-    width: 30vw; /* Further reduce the width of the box */
-    max-width: 500px; /* Set a maximum width for larger screens */
-    padding: 0.75rem; /* Reduce padding for a more compact design */
-    border-radius: 0; /* Remove rounded edges */
+.footer-box {
+    background-color: #A71E22;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E8E9E9;
 }
 
-.variations::before {
-    content: ''; /* Create a separate box */
-    position: absolute;
-    top: 0;
-    left: 50%; /* Start at the center of the page */
-    width: 50vw; /* Extend to the right edge */
-    height: 100%; /* Match the height of the .variations section */
-    background-color: #0B162C; /* Set the background color */
-    z-index: -1; /* Place the box behind the text */
-    border-radius: 0; /* Remove rounded corners */
+.footer-box a {
+    color: #E8E9E9; /* White color matching the page background */
+    font-size: 2rem; /* Same size as "HISTORY OF THE FONT" */
+    text-decoration: none; /* Ensures no underline is applied */
+    font-family: 'Nickel Gothic', sans-serif;
+    position: relative;
+    /* Removed hover effects */
 }
 
-.variations h2 {
-    font-size: 2rem; /* Match the size of "HISTORY OF THE FONT" */
-    color: #E8E9E9; /* Keep the text color consistent */
-    text-align: right; /* Align the heading to the right */
-    margin-top: 1rem; /* Add spacing above the heading */
-    margin-bottom: 1rem; /* Add spacing below the heading */
-}
-
-.variations p {
-    font-family: Arial, sans-serif; /* Use a basic sans-serif font */
-    font-size: 1.5rem; /* Match the font size of the history paragraph */
-    text-align: left; /* Align the text to the left */
-    line-height: 1.4; /* Match the line spacing of the history paragraph */
-}
-
-.variations h5 {
-    text-align: right; /* Align the subheadings to the right */
-    margin-right: 0; /* Ensure no extra margin on the right */
-}
-
-.alphabet {
-grid-area: a;
-}
-
-.alphabet h1 {
-    white-space: nowrap;
-}
-
-.hero {
-    margin-top: 2rem; /* Adjust spacing for desktop mode */
-}
-}
-/* CSS for the footer */
-footer{
-    background-color: #A71E22; /* Match the red color used for text */
-}
-
-/* variable font animation */
-h3{
-    font-weight:20; 
+h3 {
+    font-weight: 20;
     text-align: center;
     font-size: 5em;
-    animation: weightChange 10s infinite; /* Set animation duration to 10 seconds */
+    animation: weightChange 10s infinite;
 }
 
 .hero h3:nth-of-type(2) {
-    animation: weightChange 10s infinite; /* Same animation as NICKEL */
+    animation: weightChange 10s infinite;
 }
 
 .hero h3:nth-of-type(1) {
-    color: #0D82B0; /* Same color as the dropdown menu */
+    color: #0D82B0;
 }
 
 .hero h3:nth-of-type(2) {
-    color: #A71E22; /* Same color as "HISTORY" hover */
+    color: #A71E22;
 }
 
-/* Remove reverseSlant animation */
-
 .hero {
-    margin-top: 0; /* Remove extra margin since padding-top handles spacing */
+    margin-top: 0;
     text-align: center;
-    padding-top: clamp(0.75em, 2vw, 1.5em); /* Responsive vertical spacing */
+    padding-top: clamp(0.75em, 2vw, 1.5em);
 }
 
 .hero h3 {
-    font-size: clamp(5rem, 15vw, 20rem); /* Original font size */
-    margin: 0; /* Original vertical margin */
-    line-height: 0.75; /* Original line height */
-    text-align: center; /* Original text alignment */
-    word-break: break-word; /* Original wrapping behavior */
+    font-size: clamp(5rem, 15vw, 20rem);
+    margin: 0;
+    line-height: 0.75;
+    text-align: center;
+    word-break: break-word;
 }
 
 @keyframes weightChange {
     0%, 12.5% {
-        font-variation-settings: "wdth" 150, "slnt" 0; /* Widest with no slant */
+        font-variation-settings: "wdth" 150, "slnt" 0;
     }
     50% {
-        font-variation-settings: "wdth" 25, "slnt" -15; /* Thinnest with slant */
+        font-variation-settings: "wdth" 25, "slnt" -15;
     }
     100% {
-        font-variation-settings: "wdth" 150, "slnt" 0; /* Return to widest with no slant */
+        font-variation-settings: "wdth" 150, "slnt" 0;
     }
 }
-/* animations for the variation section */
-.width{
-    animation:weightVariations 5s infinite;
+
+.width {
+    animation: weightVariations 5s infinite;
 }
+
 @keyframes weightVariations {
-    0%, 100%{
+    0%, 100% {
         font-variation-settings: "wdth" 25;
     }
-    50%{font-variation-settings: "wdth" 150;
+    50% {
+        font-variation-settings: "wdth" 150;
     }
-    
 }
-.slant{
-    animation:slantVariations 5s infinite;
+
+.slant {
+    animation: slantVariations 5s infinite;
 }
+
 @keyframes slantVariations {
-    0%, 100%{
+    0%, 100% {
         font-variation-settings: "slnt" 15;
     }
-    50%{font-variation-settings: "slnt" -15;
+    50% {
+        font-variation-settings: "slnt" -15;
     }
-    
 }
-h5{
-    font-size:40px;
+
+h5 {
+    font-size: 40px;
 }
-/* variable font that changes on hover */
-.variable-font{
-    font-weight:1 ;
-    height:100vh;
+
+.variable-font {
+    font-weight: 1;
+    height: 100vh;
     font-size: 10em;
-    display:grid;
+    display: grid;
     place-content: center;
     margin: 0;
     text-align: center;
     font-variation-settings: "wght" 40, "wdth" 0, "XXXX" 1;
-    transition: 
-        font-weight 500ms,
-        font-variation-settings 3s;
+    transition: font-weight 500ms, font-variation-settings 3s;
 }
 
-.variable-font:hover{
-    font-weight:500 ;
-    height:100vh;
+.variable-font:hover {
+    font-weight: 500;
+    height: 100vh;
     font-size: 7em;
-    display:grid;
+    display: grid;
     place-content: center;
     margin: 0;
     text-align: center;
     font-variation-settings: "wght" 120, "wdth" 0, "XXXX" 100;
 }
-/* button styling */
-a {display: inline-block;
+
+a {
+    display: inline-block;
     text-decoration: none;
     border: none;
     outline: none;
     cursor: pointer;
     padding: 20px 20px;
-    margin:0px;
+    margin: 0px;
     border-radius: 10px;
     font-size: 10px;
     font-family: 'Nickel Gothic', sans-serif;
 }
- /* Hover effect with animation */
- .hover-effect {
+
+.hover-effect {
     position: relative;
     color: #007bff;
     transition: color 0.3s;
-  }
+}
 
-  .hover-effect::before {
+.hover-effect::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -237,141 +288,169 @@ a {display: inline-block;
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
-  }
+}
 
-  .hover-effect:hover::before {
+.hover-effect:hover::before {
     visibility: visible;
     transform: scaleX(1);
-  }
+}
 
 .page-nav ul li a {
-    font-size: clamp(0.8rem, 2vw, 1.5rem); /* Scales between 0.8rem and 1.5rem */
-    transition: font-size 0.3s ease; /* Smooth transition for scaling */
+    font-size: clamp(0.8rem, 2vw, 1.5rem);
+    transition: font-size 0.3s ease;
 }
 
 @media only screen and (max-width: 400px) {
     .page-nav ul li a {
-        font-size: 0.7rem; /* Ensure readability on very small screens */
+        font-size: 0.7rem;
     }
 }
 
 .history {
-    background-color: #09354D; /* Same color as the nav bar */
-    color: #E8E9E9; /* Ensure text is readable */
-    padding: 1.5rem; /* Add padding inside the box */
-    position: relative; /* Keep the text layout intact */
-    max-width: 600px; /* Lock the width of the history section */
-    margin-inline: auto; /* Center the section horizontally */
-    margin-bottom: 0; /* Remove bottom margin to ensure it touches the next section */
-}
-
-.history::before {
-    content: ''; /* Create a separate box */
-    position: absolute;
-    top: 0;
-    left: -100vw; /* Stretch fully to the left edge of the page */
-    width: 150vw; /* Extend to cover the left stretch and end at the center */
-    height: 100%; /* Match the height of the .history section */
-    background-color: #09354D; /* Same color as the nav bar */
-    z-index: -1; /* Place the box behind the text */
-    border-radius: 0; /* Remove rounded corners */
+    grid-area: h;
+    background-color: #09354D;
+    color: #E8E9E9;
+    padding: 1.5rem;
+    position: relative;
+    max-width: 600px;
+    margin-inline: auto;
+    margin-bottom: 0;
+    text-align: left;
 }
 
 .history h2 {
-    font-size: 2rem; /* Lock the font size */
-    color: #0D82B0; /* Keep the blue color */
-    text-align: left; /* Align the heading to the left */
-    margin-bottom: 1rem; /* Add spacing below the heading */
-    max-width: 100%; /* Ensure the title doesn't exceed the section width */
+    font-size: 2rem;
+    color: #0D82B0;
+    margin-bottom: 1rem;
 }
 
 .history p {
-    font-family: Arial, sans-serif; /* Use a basic sans-serif font */
-    font-size: 1.5rem; /* Lock the font size */
-    text-align: left; /* Align the text to the left */
-    line-height: 1.4; /* Maintain consistent line spacing */
-    max-width: 100%; /* Ensure the paragraph doesn't exceed the section width */
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+.variations {
+    grid-area: v;
+    background-color: #0B162C;
+    color: #E8E9E9;
+    padding: 1.5rem;
+    position: relative;
+    max-width: 500px;
+    margin-inline: auto;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.variations h2 {
+    font-size: 2rem;
+    color: #E8E9E9;
+    margin-bottom: 1rem;
+}
+
+.variations p {
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+.variations h5 {
+    font-size: 1.25rem;
+    color: #E8E9E9;
+    margin-bottom: 0.5rem;
+}
+
+.history::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    width: 150vw;
+    height: 100%;
+    background-color: #09354D;
+    z-index: -1;
+    border-radius: 0;
 }
 
 .history, .variations {
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack content vertically */
-    justify-content: center; /* Center content vertically */
-    padding-left: 2rem; /* Add consistent left padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2rem;
+    height: 100%;
 }
 
-/* Ensure headings are aligned horizontally */
 .history h2, .variations h2 {
-    margin-left: 0; /* Remove any extra left margin */
+    margin: 0;
+    padding: 0;
 }
 
 @media only screen and (max-width: 800px) {
     body, .page-wrapper, .page-wrapper section, .history, .variations, .alphabet, .hero, h3, h5, .variable-font, a, .hover-effect, .page-nav ul li a {
-        font-variation-settings: "slnt" 0; /* Ensure no slant in mobile mode */
-        font-style: normal; /* Explicitly set normal font style */
+        font-variation-settings: "slnt" 0;
+        font-style: normal;
     }
 
     .history h2 {
-        color: #0D82B0; /* Keep the blue color for "HISTORY OF THE FONT" */
+        color: #0D82B0;
     }
 
     .variations p {
-        font-family: Arial, sans-serif; /* Ensure the font remains consistent */
+        font-family: Arial, sans-serif;
     }
 
     .history {
-        position: relative; /* Ensure proper layout */
-        padding: 1.5rem; /* Maintain padding for text */
-        margin-bottom: 0; /* Remove bottom margin to ensure it touches the next section */
+        position: relative;
+        padding: 1.5rem;
+        margin-bottom: 0;
     }
 
     .history::before {
-        content: ''; /* Create a separate box */
-        position: absolute; /* Use absolute positioning */
+        content: '';
+        position: absolute;
         top: 0;
-        left: -100vw; /* Stretch infinitely to the left */
-        right: -100vw; /* Stretch infinitely to the right */
-        width: auto; /* Allow horizontal stretching */
-        height: calc(100% + 3rem); /* Extend height further to overlap the top of the .variations box */
-        background-color: #09354D; /* Same color as the nav bar */
-        z-index: -1; /* Place the box behind the text */
-        border-radius: 0; /* Remove rounded corners */
+        left: -100vw;
+        right: -100vw;
+        width: auto;
+        height: calc(100% + 3rem);
+        background-color: #09354D;
+        z-index: -1;
+        border-radius: 0;
     }
 
     .variations {
-        grid-area: auto; /* Remove grid placement */
-        margin-top: 0; /* Remove spacing between history and variations */
-        padding: 1.5rem; /* Maintain padding for text */
-        position: relative; /* Ensure proper layout */
-        color: #E8E9E9; /* Ensure text remains white */
+        grid-area: auto;
+        margin-top: 0;
+        padding: 1.5rem;
+        position: relative;
+        color: #E8E9E9;
     }
 
     .variations::before {
-        content: ''; /* Create a separate box */
-        position: absolute; /* Use absolute positioning */
+        content: '';
+        position: absolute;
         top: 0;
-        left: -100vw; /* Stretch infinitely to the left */
-        right: -100vw; /* Stretch infinitely to the right */
-        width: auto; /* Allow horizontal stretching */
-        height: 100%; /* Match the height of the .variations section */
-        background-color: #0B162C; /* Set the background color */
-        z-index: -1; /* Place the box behind the text */
-        border-radius: 0; /* Remove rounded corners */
+        left: -100vw;
+        right: -100vw;
+        width: auto;
+        height: 100%;
+        background-color: #0B162C;
+        z-index: -1;
+        border-radius: 0;
     }
 
     .page-wrapper {
-        display: block; /* Stack sections vertically */
+        display: block;
     }
 
     .history, .variations {
-        display: flex; /* Use flexbox for alignment */
-        flex-direction: column; /* Stack content vertically */
-        justify-content: center; /* Center content vertically */
-        padding-left: 1rem; /* Add consistent left padding for mobile */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 1rem;
     }
 
-    /* Ensure headings are aligned horizontally in mobile mode */
     .history h2, .variations h2 {
-        margin-left: 0; /* Remove any extra left margin */
+        margin-left: 0;
     }
 }

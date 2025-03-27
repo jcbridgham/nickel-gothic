@@ -1,182 +1,174 @@
 *, *::before, *::after {
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     margin: 0;
-  }
-  
-  header {
-    /* where to set the color of the nav bar */
-      background: #09354D;
-      text-align: left;
-      top:0px;
-      position: fixed;
-      z-index: 999;
-      width: 100%;
-      height: 4rem; /* Set a fixed height for the header */
-      display: flex; /* Use flexbox for alignment */
-      align-items: center; /* Vertically center content */
-  }
-  
-  .logo {
+}
+
+header {
+    background: #09354D;
+    text-align: left;
+    top: 0px;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
     margin: 0;
     padding: 0;
-    position: absolute; /* Position the logo absolutely */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for centering */
-    text-align: center; /* Center the text */
-    line-height: 0.8; /* Reduce spacing between the two words */
-    color: #E8E9E9; /* Keep the white-esque color */
-    font-size: clamp(1rem, 3vw, 2rem); /* Smaller font size for mobile and desktop */
-  }
-  /* where to change the background color of the pop-up nav bar*/
-  nav {
-      position: absolute;
-      text-align: left;
-      padding-top:10px;
-      top: 100%;
-      left: 0;
-      background: #0D82B0;
-      width: 100%;
-      transform: scale(1, 0); /* Ensure the nav bar is closed by default */
-      transform-origin: top;
-      transition: transform 400ms ease-in-out;
-  }
-  
-  nav ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-  }
-  
-  nav li {
-      margin-bottom: 1em;
-      margin-left: 1em;
-  }
-  
-  nav a {
-      color: #E8E9E9;
-      text-decoration: none;
-      font-size: 25px;
-      text-transform: uppercase;
-      opacity: 0;
-      transition: opacity 100ms ease-in-out;
-  }
-  /* where to change the font color of the nav bar pop-up */
-  nav a:hover {
-      color: #A71E22;
-  }
-  
-  .nav-checkbox:checked ~ nav {
-     transform: scale(1,1);
-  }
-  
-  .nav-checkbox {
-      display: none;
-  }
-  
-  .nav-checkbox-icon {
-      position: absolute;
-      top: 0;
-      right: 0;
-      margin-right: 1em;
-      height: 100%;
-      display: flex;
-      align-items: center;    
-  }
-  
-  .nav-checkbox-icon span,
-  .nav-checkbox-icon span::before,
-  .nav-checkbox-icon span::after {
-  
-          display: block;
-          /* color of the hamburger menu */
-          background: #E8E9E9;
-          /* how far the hamburger menu is from the top */
-          margin-top:13px;
-          height: 3px;
-          width: 2em;
-          position: relative;
-          
-  }
-  
-  .nav-checkbox-icon span::before,
-  .nav-checkbox-icon span::after {
-  
-          content: '';
-          position: absolute;
-  }
-  
-  .nav-checkbox-icon span::before {
-      bottom: 7px;
-  }
-  
-  .nav-checkbox-icon span::after {
-      bottom: 14px;
-  }
-  
-  .nav-checkbox:checked ~ nav a{
-      opacity: 1;
-      transition: opacity 250ms ease-in-out 350ms;
-  }
-  
-  @media screen and (min-width: 800px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 0.8;
+    color: #E8E9E9;
+    font-size: clamp(1rem, 3vw, 2rem);
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    padding-top: 10px;
+    top: 100%;
+    left: 0;
+    background: #0D82B0;
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: #E8E9E9;
+    text-decoration: none;
+    font-size: 25px;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 100ms ease-in-out;
+}
+
+nav a:hover {
+    color: #A71E22;
+}
+
+.nav-checkbox:checked ~ nav {
+    transform: scale(1, 1);
+}
+
+.nav-checkbox {
+    display: none;
+}
+
+.nav-checkbox-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-checkbox-icon span,
+.nav-checkbox-icon span::before,
+.nav-checkbox-icon span::after {
+    display: block;
+    background: #E8E9E9;
+    margin-top: 13px;
+    height: 3px;
+    width: 2em;
+    position: relative;
+}
+
+.nav-checkbox-icon span::before,
+.nav-checkbox-icon span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-checkbox-icon span::before {
+    bottom: 7px;
+}
+
+.nav-checkbox-icon span::after {
+    bottom: 14px;
+}
+
+.nav-checkbox:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 350ms;
+}
+
+@media screen and (min-width: 800px) {
     .nav-checkbox-icon {
-      display: none;
+        display: none;
     }
     header {
-      display: grid;
-      grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
     }
     .logo {
-      grid-column: 2 / span 1;
+        grid-column: 2 / span 1;
     }
     nav {
-      all: unset;
-      grid-column: 3 / 4;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
+        all: unset;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
     }
     nav a {
-      opacity: 1;
-      position: relative;
+        opacity: 1;
+        position: relative;
     }
     nav ul {
-      display: flex;
-     
+        display: flex;
     }
     nav li {
-      margin-left: 3em;
-      margin-bottom: 0;
+        margin-left: 3em;
+        margin-bottom: 0;
     }
     nav a::before {
-      content: '';
-      display: block;
-      height: 3px;
-      background: #A71E22; /* Use the same red color as "GOTHIC" */
-      position: absolute;
-      top: calc(100% + -2px); /* Move the line closer to the bottom of the header */
-      left: 0;
-      right: 0;
-      transform: scale(0,1);
-      transition: transform ease-in-out 250ms;
-      
+        content: '';
+        display: block;
+        height: 3px;
+        background: #A71E22;
+        position: absolute;
+        top: calc(100% + -2px);
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
     }
     nav a:hover::before {
-      transform: scale(1,1);
+        transform: scale(1, 1);
     }
-  }
+}
 
-  @media screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
     .logo {
-        position: static; /* Remove absolute positioning */
-        transform: none; /* Remove centering transform */
-        text-align: left; /* Align text to the left */
-        padding-left: 1rem; /* Add some padding for spacing */
-        font-size: clamp(1.5rem, 5vw, 2.5rem); /* Increase font size for mobile */
+        position: static;
+        transform: none;
+        text-align: left;
+        padding-left: 1rem;
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
     }
-  }
+}
 
