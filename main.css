@@ -123,10 +123,27 @@ body {
 
     .alphabet {
         grid-area: a;
+        margin-top: -2rem; /* Move the section up */
+        color: #0B162C; /* Match the color of the variations box */
     }
 
     .alphabet h1 {
+        font-size: 3rem; /* Reverted to original size */
+        color: #0D82B0; /* Match color of "HISTORY OF THE FONT" */
         white-space: nowrap;
+        margin-bottom: 0.5rem; /* Reduce spacing below the title */
+    }
+
+    .alphabet p {
+        font-size: 2.5rem; /* Increased size for the character text */
+        line-height: 1.2; /* Further decrease line height for tighter spacing */
+        margin-bottom: 0.25rem; /* Reduce margin between paragraphs */
+        display: inline-block; /* Ensure numbers and symbols are inline */
+        margin-right: 2rem; /* Add more horizontal spacing between elements */
+    }
+
+    .alphabet p:nth-of-type(2), .alphabet p:nth-of-type(3) {
+        color: #A71E22; /* Match the color of "GOTHIC" */
     }
 
     .hero {
@@ -136,11 +153,27 @@ body {
 
 footer {
     background-color: #0B162C;
-    height: 4rem;
+    height: auto; /* Allow height to adjust to content */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* Stack footer content vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    padding: 1rem; /* Add padding for spacing */
     color: #E8E9E9;
+    font-family: Arial, sans-serif; /* Match the font of the history paragraph */
+    font-size: 1rem;
+    text-align: center;
+    margin: 0; /* Remove any margin around the footer */
+}
+
+footer .footer-left,
+footer .footer-center,
+footer .footer-right {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 0.5rem 0; /* Add vertical spacing between items */
+    text-align: center; /* Ensure text is centered */
 }
 
 .footer-box {
@@ -161,8 +194,25 @@ footer {
     transition: color 0.3s ease; /* Add transition for smooth color change */
 }
 
+footer a {
+    color: inherit; /* Match the color of the surrounding text */
+    text-decoration: none; /* Remove underline */
+    font-family: inherit; /* Match the font of the surrounding text */
+    font-size: inherit; /* Match the point size of the surrounding text */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and size */
+}
+
+footer a:hover {
+    color: #A71E22; /* Match the red color of "GOTHIC" */
+    transform: scale(1.1); /* Slightly enlarge the link */
+}
+
 .footer-box a:hover {
-    color: #0B162C; /* Same color as the variations box */
+    color: #A71E22; /* Match the red color of "GOTHIC" */
+}
+
+footer a:hover {
+    color: #A71E22; /* Match the red color of "GOTHIC" */
 }
 
 h3 {
@@ -470,5 +520,35 @@ a {
         text-transform: uppercase;
         letter-spacing: 0.1em;
         color: #A71E22; /* Same red color as desktop */
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    footer {
+        flex-direction: column; /* Stack footer content vertically */
+        text-align: center; /* Center text for all items */
+        padding: 0.5rem; /* Reduce padding for mobile */
+    }
+
+    footer .footer-left,
+    footer .footer-center,
+    footer .footer-right {
+        margin: 0.25rem 0; /* Reduce vertical spacing between items */
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    footer {
+        flex-direction: row; /* Keep footer content on one line */
+        justify-content: space-between; /* Distribute items horizontally */
+        align-items: center; /* Center items vertically */
+        padding: 0.5rem 1rem; /* Shrink padding to fit text */
+        height: auto; /* Adjust height to fit content */
+    }
+
+    footer .footer-left,
+    footer .footer-center,
+    footer .footer-right {
+        margin: 0; /* Remove vertical spacing for desktop */
     }
 }

@@ -62,10 +62,15 @@ nav a {
     text-transform: uppercase;
     opacity: 0;
     transition: opacity 100ms ease-in-out;
+    cursor: pointer;
 }
 
 nav a:hover {
     color: #A71E22;
+}
+
+.page-nav ul li a {
+    font-size: 1.5rem; /* Increase font size for navigation links */
 }
 
 .nav-checkbox:checked ~ nav {
@@ -114,6 +119,10 @@ nav a:hover {
 .nav-checkbox:checked ~ nav a {
     opacity: 1;
     transition: opacity 250ms ease-in-out 350ms;
+}
+
+nav a:active + .nav-checkbox {
+    display: none; /* Ensure the checkbox is hidden after clicking */
 }
 
 @media screen and (min-width: 800px) {
