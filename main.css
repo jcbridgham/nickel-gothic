@@ -10,6 +10,7 @@ body {
     background-color: #E8E9E9;
     font-family: 'Nickel Gothic', sans-serif;
     padding-top: 4rem;
+    overflow-x: hidden;
 }
 
 .page-wrapper {
@@ -86,7 +87,7 @@ body {
 
     .variations h2 {
         font-size: 2rem;
-        color: #E8E9E9;
+        color: #0D82B0; /* Match "history of the font" color */
         text-align: left;
         margin-top: 0;
         margin-bottom: 0.5rem;
@@ -157,7 +158,11 @@ footer {
     text-decoration: none; /* Ensures no underline is applied */
     font-family: 'Nickel Gothic', sans-serif;
     position: relative;
-    /* Removed hover effects */
+    transition: color 0.3s ease; /* Add transition for smooth color change */
+}
+
+.footer-box a:hover {
+    color: #0B162C; /* Same color as the variations box */
 }
 
 h3 {
@@ -206,7 +211,8 @@ h3 {
 }
 
 .width {
-    animation: weightVariations 5s infinite;
+    animation: weightVariations 3s infinite; /* Reduced duration from 5s to 3s */
+    font-variation-settings: "wdth" 80; /* Changed from 100 to 80 */
 }
 
 @keyframes weightVariations {
@@ -214,12 +220,12 @@ h3 {
         font-variation-settings: "wdth" 25;
     }
     50% {
-        font-variation-settings: "wdth" 150;
+        font-variation-settings: "wdth" 80; /* Changed from 100 to 80 */
     }
 }
 
 .slant {
-    animation: slantVariations 5s infinite;
+    animation: slantVariations 3s infinite; /* Reduced duration from 5s to 3s */
 }
 
 @keyframes slantVariations {
@@ -274,25 +280,11 @@ a {
 .hover-effect {
     position: relative;
     color: #007bff;
-    transition: color 0.3s;
+    /* Removed transition and hover effects */
 }
 
 .hover-effect::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #007bff;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out 0s;
-}
-
-.hover-effect:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
+    content: none; /* Removed hover animation */
 }
 
 .page-nav ul li a {
@@ -344,7 +336,7 @@ a {
 
 .variations h2 {
     font-size: 2rem;
-    color: #E8E9E9;
+    color: #0D82B0; /* Match "history of the font" color */
     margin-bottom: 1rem;
 }
 
@@ -378,6 +370,9 @@ a {
     justify-content: center;
     padding-left: 2rem;
     height: 100%;
+    max-width: 100%; /* Ensure they fit within the page width */
+    margin-bottom: 4rem; /* Match the footer height to avoid overlap */
+    box-sizing: border-box; /* Include padding and border in width/height calculations */
 }
 
 .history h2, .variations h2 {
@@ -452,5 +447,28 @@ a {
 
     .history h2, .variations h2 {
         margin-left: 0;
+    }
+
+    .variations h2 {
+        color: #0D82B0; /* Match "history of the font" color */
+    }
+
+    .variations h5.width, .variations h5.slant {
+        font-size: 6rem; /* Same size as desktop */
+        margin-top: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #0D82B0; /* Same color as desktop */
+        text-align: center; /* Center the text */
+        margin-left: auto; /* Center horizontally */
+        margin-right: auto; /* Center horizontally */
+    }
+
+    .variations h5.slant {
+        font-size: 6rem; /* Same size as desktop */
+        margin-top: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #A71E22; /* Same red color as desktop */
     }
 }
